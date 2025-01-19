@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoViSon</title>
+    <link rel="icon" href=logo.jpg type="image/x-icon" />
+    <link rel="stylesheet" href="contact_styale.css">
+    
+    <style>
+        /* Hide the contact form by default */
+        #contactFormContainer {
+            display: none;
+        }
+        
+        #successMessage {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Slot Registration</h1>
+        
+        <!-- Registration Form -->
+        <form id="registrationForm" action="https://formspree.io/f/mqaaezjy" method="POST" onsubmit="handleSubmit(event)">
+			
+			<div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" required>
+            </div>
+            
+            <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+            </div>
+            
+            <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                <label><input type="radio" name="gender" value="Female" required> Female</label>
+            </div>
+            </div>
+            
+            <div class="form-group">
+            <label for="slotCode">Slot Code</label>
+            <input type="text" id="slotCode" name="slotCode" placeholder="Auto-filled slot code" readonly required>
+            </div>
+            
+            <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" name="amount" placeholder="Enter Amount" required>
+            </div>
+            
+            <button type="submit">Register</button>
+        </form>
+        
+        <div id="successMessage">Registration Successful!</div>
+        
+    </div>
+
+    <script>
+    // Function to get the value of a query parameter by name
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Autofill the slot code field when the page loads
+    window.onload = function() {
+        const slotCode = getQueryParam('slot');  // Get the 'slot' parameter from the URL
+        if (slotCode) {
+            const slotCodeInput = document.getElementById('slotCode');
+            if (slotCodeInput) {
+                slotCodeInput.value = slotCode; 
+                slotCodeInput.readOnly = true; // Set the value of the input field to the slot code
+            }
+        }
+    };
+    
+    function handleSubmit(event) {
+
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Redirect after 2 seconds to invest_index.html
+            setTimeout(function() {
+                window.location.href = 'public/invest_index.html'; // Redirect to the investment index page
+            }, 2000); // 2 seconds delay
+        }
+</script>
+
+</body>
+</html>

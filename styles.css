@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+	font-family: 'Roboto', sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    color: white;
+    font-weight: bold;
+}
+
+.movison-text {
+    color: palegoldenrod;
+    font-weight: bold;
+}
+
+.tagline {
+    font-size: 1em;
+    color: white;
+    font-style: italic;
+}
+
+#about {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#about h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#about p {
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#about2 {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#about2 h3 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#about2 p {
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;  /* Changes the layout to vertical */
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
+    margin: 10px 0;
+    padding: 20px;
+    background-color: lightgoldenrodyellow;
+    color: white;
+    text-align: center; /* Centers the text */
+    border-radius: 8px;
+     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.box:hover {
+    background-color:black;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 25px;
+    margin-top: 15px; /* Adds space below the image */
+}
+
+.box-image {
+    width: 300px;  /* Adjust the image size as needed */
+    height: 150px;
+}
+
+.box-description {
+    font-size: 16px;
+}
